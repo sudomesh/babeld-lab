@@ -54,7 +54,7 @@ and that the ```sudo ip netns exec n1 ip route``` contains something like:
 ```
 170.30.100.2 via 170.30.100.2 dev veth-n1  proto babel onlink 
 ```
-To run any command within a particular namespace use ```sudo ip netns exec n0 <insert command here>```
+To run any command within a particular namespace use ```sudo ip netns exec n0 <insert command here>```.
 For example, you can run netcat between the two namespaces. In one terminal, run ```sudo ip netns exec n0 nc -l 80```. In another terminal, run ```sudo ip netns exec n1 nc 170.30.100.2 80```. Now, your two namespaces will be able to talk to one another. Type "pizza" into the the second terminal and "pizza" should appear in the first terminal.
 
 # step 4: monitor babel toggle bridge
