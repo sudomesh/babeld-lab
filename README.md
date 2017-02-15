@@ -40,7 +40,7 @@ verify that the ```ip addr``` cmds of step 1 now indicate that the interfaces ar
 ```
 sudo ./babeld-lab.sh start
 ```
-Files ```babel0.log```, ```babel0.pid```, ```babel1.log```, ```babel1.pid``` should now be created. 
+Log and process id files for started babel nodes should now be created (e.g. ```babel0.log```, ```babel0.pid```).
 
 Verify that ```sudo ip netns exec n0 ip route``` contains something like:
 ```
@@ -56,7 +56,11 @@ To monitor the babel chatter, start wireshark and select br-babel interface: you
 
 When disabling the bridge (similar to unplugging nodes from a network switch), using something like ```sudo ./babeld-lab.sh down_bridge```, the routing tables of n0 and n1 network namespaces should clear out, and traffic should stop.
 
-Enabling using ```sudo ./babeld-lab.sh up_bridge``` should restart the network.
+You can monitor the node logs (e.g. ```babel0.log```) and you'll notice the routes aging and eventually being removed. This might process might take a minute or two.
+
+After the route expired, the ```sudo ip netns exec n0 ip route``` should no longer contain entry like ```170.30.101.2 via 170.30.101.2 dev veth-n0  proto babel onlink```.  
+
+Enabling using ```sudo ./babeld-lab.sh up_bridge``` should restart the network, reintroduce the chatter and re-establish the routes.
 
 # step 5: stop and delete the network 
 After doing the experiments, stop babeld ```sudo ./babeld-lab.sh stop```, stop the interfaces/bridge and delete the virtual network interfaces ```sudo sh babeld-lab.sh down```, delete the network interfaces/bridge ```sudo ./babeld-lab delete```
