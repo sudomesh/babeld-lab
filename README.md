@@ -25,20 +25,20 @@ To build an experimental setup that connects (virtual) babel nodes without havin
 this adds interfaces
 
 ```
-sudo sh babeld-lab add
+sudo ./babeld-lab.sh add
 ```
 verify that ```ip addr``` now contains br-babel and veth-p0/p1.
 also verify that ```sudo ip netns exec n0 ip addr``` contains veth-n0 and ```sudo ip netns exec n1 ip addr``` contains veth-n0. The state of all interfaces should be down.
 
 # step 2: turn interfaces on
 ```
-sudo sh babeld-lab up
+sudo ./babeld-lab.sh up
 ```
 verify that the ```ip addr``` cmds of step 1 now indicate that the interfaces are up.
 
 # step 3: start babeld's
 ```
-sudo sh babeld-lab start
+sudo ./babeld-lab.sh start
 ```
 verify that ```sudo ip netns exec n0 ip route``` contains something like:
 ```
@@ -52,9 +52,9 @@ and that the ```sudo ip netns exec n1 ip route``` contains something like:
 # step 4: monitor babel toggle bridge
 To monitor the babel chatter, start wireshark and select br-babel interface: you should see babel hello and babel ihu (I hear you) messages going back and forth.
 
-When disabling the bridge (similar to unplugging nodes from a network switch), using something like ```sudo sh babeld-lab.sh down_bridge```, the routing tables of n0 and n1 network namespaces should clear out, and traffic should stop.
+When disabling the bridge (similar to unplugging nodes from a network switch), using something like ```sudo ./babeld-lab.sh down_bridge```, the routing tables of n0 and n1 network namespaces should clear out, and traffic should stop.
 
-Enabling using ```sudo sh babeld-lab.sh up_bridge``` should restart the network.
+Enabling using ```sudo ./babeld-lab.sh up_bridge``` should restart the network.
 
 # step 5: stop and delete the network 
 After doing the experiments, stop babeld ```sudo ./babeld-lab.sh stop```, stop the interfaces/bridge and delete the virtual network interfaces ```sudo sh babeld-lab.sh down```, delete the network interfaces/bridge ```sudo ./babeld-lab delete```
