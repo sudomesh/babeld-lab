@@ -17,6 +17,10 @@ To build an experimental setup that connects (virtual) babel nodes without havin
 
 [Docker](https://docker.com) is using similar techniques (network namespaces) under the hood to configure network interfaces. Docker provides much more functionality, but for our intended purposes, we don't need to full-blown docker containers to demonstrate how babeld works.
 
+We're trying to build something like:
+
+[![diagram](./diagram.png)](./diagram.png)
+
 # step 0: clone this repository
 
 ```git clone https://github.com/jhpoelen/babeld-lab.git```
