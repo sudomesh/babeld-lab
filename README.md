@@ -10,7 +10,7 @@ The purpose of this project is to setup a virtual babel mesh for educational and
 1. [git](https://git-scm.com)
 1. [babeld](https://github.com/jech/babeld)
 1. [wireshark](https://wireshark.org)
-1. access to tools [ip](http://man7.org/linux/man-pages/man8/ip.8.html) and [brctl](https://linux.die.net/man/8/brctl) (in bridge-tools) 
+1. access to tools [ip](http://man7.org/linux/man-pages/man8/ip.8.html) and [brctl](https://linux.die.net/man/8/brctl) (using ```sudo apt-get install bridge-utils``` perhaps) 
 
 # building a virtual two node babel mesh
 To build an experimental setup that connects (virtual) babel nodes without having to mess around with physical hardware, various techniques can be used. One of them is using linux's veth, brctr, and ip to create virtual network interfaces and bridges and (optionally) isolate them using namespaces. 

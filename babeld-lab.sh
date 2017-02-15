@@ -14,7 +14,7 @@ add() {
 
   # create virtual switch by linux interface bridge
   brctl addbr $BRIDGE
-  brctl stp   $BRIDGE off
+  brctl stp   $BRIDGE on
 
   brctl addif $BRIDGE veth-p0
   brctl addif $BRIDGE veth-p1
@@ -69,8 +69,8 @@ start_babeld() {
 }
 
 stop_babeld() {
-  kill $(cat babel0.pid)
-  kill $(cat babel1.pid)
+  kill $(cat babeld-n0.pid)
+  kill $(cat babeld-n1.pid)
 }
 
 delete() {
