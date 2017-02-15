@@ -64,8 +64,8 @@ down_bridge() {
 }
 
 start_babeld() {
-  ip netns exec n0 babeld -I babel0.pid -d 3 -L babel0.log veth-n0 &
-  ip netns exec n1 babeld -I babel1.pid -d 3 -L babel1.log veth-n1 &
+  ip netns exec n0 babeld -I babeld-n0.pid -d 3 -L babeld-n0.log veth-n0 &
+  ip netns exec n1 babeld -I babeld-n1.pid -d 3 -L babeld-n1.log veth-n1 &
 }
 
 stop_babeld() {

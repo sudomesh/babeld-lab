@@ -5,14 +5,14 @@ digraph G {
     color=lightgrey;
     node [style=filled,color=white];
     vethn0 [ label="veth-n0\n170.30.100.2/24"];
-    "babeld0" -> vethn0;
+    "babeld-n0" -> vethn0;
     label = "network namespace\nn0";
   }
 
   subgraph cluster_1 {
     node [style=filled];
     vethn1 [ label="veth-n1\n170.30.101.2/24"];
-    "babeld1" -> vethn1;
+    "babeld-n1" -> vethn1;
     label = "network namespace\nn1";
     color=blue
   }
