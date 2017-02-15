@@ -19,7 +19,7 @@ To build an experimental setup that connects (virtual) babel nodes without havin
 
 We're trying to build something like:
 
-[![diagram](./diagram.svg)](./diagram.svg)
+[![diagram](./diagram.png)](./diagram.png)
 
 # step 0: clone this repository
 
