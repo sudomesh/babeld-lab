@@ -3,6 +3,8 @@ virtual network lab for babeld experiments
 
 The purpose of this project is to setup a virtual babel mesh for educational and testing purposes purposes. 
 
+*this is a work in progress*
+
 # requirements
 1. a linux of sorts
 2. [babeld](https://github.com/jech/babeld)
@@ -12,7 +14,11 @@ The purpose of this project is to setup a virtual babel mesh for educational and
 # building a virtual two node babel mesh
 To build an experimental setup that connects (virtual) babel nodes without having to mess around with physical hardware, various techniques can be used. One of them is using linux's veth, brctr, and ip to create virtual network interfaces and bridges and (optionally) isolate them using namespaces. 
 
-Docker is using the same tools under the hood to configure network interfaces. Docker provides much more functionality, but for our intended purposes, we don't need to create containers to demonstrate how babeld works.
+[Docker](https://docker.com) is using similar techniques (network namespaces) under the hood to configure network interfaces. Docker provides much more functionality, but for our intended purposes, we don't need to full-blown docker containers to demonstrate how babeld works.
+
+# step 0: clone this repository
+
+```git clone https://github.com/jhpoelen/babeld-lab.git```
 
 # step 1: add interfaces
 this adds interfaces
@@ -43,13 +49,11 @@ and that the ```sudo ip netns exec n1 ip route``` contains something like:
 ```
 
 # step 4: monitor babel toggle bridge
-start wireshark and select br-babel interface: you should see babel hello and babel ihu (I hear you) messages going back and forth.
+To monitor the babel chatter, start wireshark and select br-babel interface: you should see babel hello and babel ihu (I hear you) messages going back and forth.
 
 When disabling the bridge (similar to unplugging nodes from a network switch), using something like ```sudo sh babeld-lab.sh down_bridge```, the routing tables of n0 and n1 network namespaces should clear out, and traffic should stop.
 
 Enabling using ```sudo sh babeld-lab.sh up_bridge``` should restart the network.
-
-```
 
 # step 5: stop and delete the network 
 After doing the experiments, stop babeld ```sudo ./babeld-lab.sh stop```, stop the interfaces/bridge and delete the virtual network interfaces ```sudo sh babeld-lab.sh down```, delete the network interfaces/bridge ```sudo ./babeld-lab delete```
