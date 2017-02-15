@@ -40,7 +40,9 @@ verify that the ```ip addr``` cmds of step 1 now indicate that the interfaces ar
 ```
 sudo ./babeld-lab.sh start
 ```
-verify that ```sudo ip netns exec n0 ip route``` contains something like:
+Files ```babel0.log```, ```babel0.pid```, ```babel1.log```, ```babel1.pid``` should now be created. 
+
+Verify that ```sudo ip netns exec n0 ip route``` contains something like:
 ```
 170.30.101.2 via 170.30.101.2 dev veth-n0  proto babel onlink
 ``` 
