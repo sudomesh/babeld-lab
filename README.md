@@ -52,7 +52,6 @@ Enabling using ```sudo sh babeld-lab.sh up_bridge``` should restart the network.
 ```
 
 # step 5: stop and delete the network 
-After doing the experiments, stop the interfaces/bridge and delete the virtual network interfaces using:
-```sudo sh babeld-lab.sh down```
+After doing the experiments, stop babeld ```sudo ./babeld-lab.sh stop```, stop the interfaces/bridge and delete the virtual network interfaces ```sudo sh babeld-lab.sh down```, delete the network interfaces/bridge ```sudo ./babeld-lab delete```
 
 

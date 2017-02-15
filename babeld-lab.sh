@@ -1,5 +1,11 @@
 #!/bin/bash
 
+usage() {
+    echo `basename $0`: ERROR: $* 1>&2
+    echo usage: `basename $0` '[add|up|down|delete|start|stop|up_bridge|down_bridge]'
+    exit 1
+}
+
 BRIDGE=br-babel
 
 add() {
@@ -79,11 +85,6 @@ delete() {
   ip netns delete n1
 }
 
-usage() {
-    echo `basename $0`: ERROR: $* 1>&2
-    echo usage: `basename $0` '[add|up|down|delete|up_bridge|down_bridge]'
-    exit 1
-}
 
 case $1 in
   "add") add;;
