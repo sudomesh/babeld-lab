@@ -69,6 +69,6 @@ After the route expired, the ```sudo ip netns exec n0 ip route``` should no long
 Enabling using ```sudo ./babeld-lab.sh up_bridge``` should restart the network, reintroduce the chatter and re-establish the routes.
 
 # step 5: stop and delete the network 
-After doing the experiments, stop babeld ```sudo ./babeld-lab.sh stop```, stop the interfaces/bridge and delete the virtual network interfaces ```sudo sh babeld-lab.sh down```, delete the network interfaces/bridge ```sudo ./babeld-lab delete```
+After doing the experiments, stop babeld ```sudo ./babeld-lab.sh stop```, stop the interfaces/bridge and delete the virtual network interfaces ```sudo ./babeld-lab.sh down```, delete the network interfaces/bridge ```sudo ./babeld-lab delete```
 
 
