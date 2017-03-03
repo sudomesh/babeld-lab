@@ -34,7 +34,7 @@ This adds interfaces
 cd babeld-lab 
 sudo ./babeld-lab.sh add
 ```
-Verify that ```ip addr``` now contains br-babel and veth-p0/p1.  Also verify that ```sudo ip netns exec n0 ip addr``` contains veth-n0 and ```sudo ip netns exec n1 ip addr``` contains veth-n0.  The state of all interfaces should be down.
+Verify that ```ip addr``` now contains br-babel and veth-p0/p1.  Also verify that ```sudo ip netns exec n0 ip addr``` contains veth-n0 and ```sudo ip netns exec n1 ip addr``` contains veth-n1.  The state of all interfaces should be down.
 
 # step 2: turn interfaces on
 ```
