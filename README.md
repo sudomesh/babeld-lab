@@ -32,19 +32,19 @@ This adds interfaces
 
 ```
 cd babeld-lab 
-sudo ./babeld-lab.sh add
+sudo ./babeld-lab.sh -a <desired number of nodes>
 ```
 Verify that ```ip addr``` now contains br-babel and veth-p0/p1.  Also verify that ```sudo ip netns exec n0 ip addr``` contains veth-n0 and ```sudo ip netns exec n1 ip addr``` contains veth-n1.  The state of all interfaces should be down.
 
 # step 2: turn interfaces on
 ```
-sudo ./babeld-lab.sh up
+sudo ./babeld-lab.sh -u
 ```
 Verify that the ```ip addr``` cmds of step 1 now indicate that the interfaces are up.
 
 # step 3: start babeld nodes
 ```
-sudo ./babeld-lab.sh start
+sudo ./babeld-lab.sh -s
 ```
 Log and process id files for started babel nodes should now be created (e.g. ```babel0.log```, ```babel0.pid```).
 
@@ -71,6 +71,6 @@ After the route expires, the ```sudo ip netns exec n0 ip route``` should no long
 Enabling using ```sudo ./babeld-lab.sh up_bridge``` should restart the network, reintroduce the chatter, and re-establish the routes.
 
 # step 5: stop and delete the network
-After doing the experiments, stop babeld using ```sudo ./babeld-lab.sh stop```.  Stop the interfaces/bridge and delete the virtual network interfaces using ```sudo ./babeld-lab.sh down```.  Finally, delete the network interfaces/bridge with ```sudo ./babeld-lab delete```.
+After doing the experiments, stop babeld using ```sudo ./babeld-lab.sh -s```.  Stop the interfaces/bridge and delete the virtual network interfaces using ```sudo ./babeld-lab.sh -d```.  Finally, remove the network interfaces with ```sudo ./babeld-lab -r <desired number of nodes>```.
 
 
