@@ -1,9 +1,9 @@
-(this is a work in progress)
+(this is a work in progress)  
 
-Roles -
- Community Organizer (events, outreach, press, education)
- Technical Support (node deployment, troubleshooting, rooftop mounting)
- Software Engineering (firmware development, monitoring tools)
+Roles -  
+ Community Organizer (events, outreach, press, education)  
+ Technical Support (node deployment, troubleshooting, rooftop mounting)  
+ Software Engineering (firmware development, monitoring tools)  
 ------------
 Welcome to the Mesh (software engineering/education)
  
