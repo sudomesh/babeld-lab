@@ -1,6 +1,6 @@
 (this is a work in progress)  
 
-#Roles  
+# Roles  
 Mesh networks don't happen by themselves, they require a ton of effort and a lot of collaboration. If you would like to help out, there are three general roles that anyone (with the right motivation) can fulfill.  
  1. Community Organizer   
       Are you a well connected? Would you like to help make our mesh network more well connected? Use your social skills to help get the word out. Talk to neighbors and local businesses about setting up a node in their buildings. Help plan events that raise awarness of the mesh. (events, outreach, press, education)  
