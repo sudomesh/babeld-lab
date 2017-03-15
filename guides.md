@@ -22,7 +22,7 @@ Linux Tools - ip/brctl/ -
 Router -
 Switch -
  
-#Educational Guides  
+# Educational Guides  
 If you wish to become involved on a technical level, there are a handful of educational tools that we have developed to help you acquaint yourself with mesh networks and their associated concepts.  
    
  1. Deploy a n-node virtual network (babeld-lab)  
