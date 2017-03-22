@@ -35,14 +35,9 @@ Switch -
 # educational guides  
 If you wish to become involved on a technical level, there are a handful of educational tools that we have developed to help you acquaint yourself with mesh networks and their associated concepts.  
    
- 1. Deploy a n-node virtual network ([babeld-lab](https://github.com/sudomesh/babeld-lab))  
-(once finished) This will help you learn about (and visualize?) the underlying protocol that controls the flow of information on the mesh. If you want to help troubleshoot potential conflicts in the WAN as the mesh grows, this is the guide for you!  
- 2. Create your own physical node ([build firmware guide](https://github.com/sudomesh/sudowrt-firmware))(makenode also?)  
-This will help you learn about the deployment of our custom firmware and its associated hardware. If you want to get involved in the deployment and maintanece of indivdual nodes, want to contribute to the improvement of the firmware or hardware, or just want to deploy your own node, this is the guide for you!  
- 3. Deploy a two-node physical network (link to guide)  
-This will help build out the mesh and learn about the point-to-point wireless connections that are the backbone of any true mesh network. If you want help build out the mesh in your community or help do the same in other communities, this is the guide for you!  
- 4. register your nodes with peoplesopen.net  
- 5. Dashboard development guide/info?  
+ 1. (Learn) **Deploy a n-node virtual network ([babeld-lab](https://github.com/sudomesh/babeld-lab))** (once finished) This will help you learn about (and visualize?) the underlying protocol that controls the flow of information on the mesh. If you want to help troubleshoot potential conflicts in the WAN as the mesh grows, this is the guide for you!  
+ 2. (Build) **Create your own physical node ([build firmware guide](https://github.com/sudomesh/sudowrt-firmware))(makenode also?)**  This will help you learn about the deployment of our custom firmware and its associated hardware. If you want to get involved in the deployment and maintenance of indivdual nodes, want to contribute to the improvement of the firmware or hardware, or just want to deploy your own node, this is the guide for you! This process also registers your node with peoplesopen.net . 
+ 3. (Teach) **Help a friend or a neighbor work through this guide and grow the mesh network.** This will help build out the mesh and learn about the point-to-point wireless connections that are the backbone of any true mesh network. If you want help build out the mesh in your community or help do the same in other communities, this is the guide for you! 
  
 # list of current projects?  
   
