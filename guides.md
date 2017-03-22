@@ -1,11 +1,11 @@
 (this is a work in progress)  
 
-# welcome to the mesh (0 to 100)  
+# Welcome to the mesh (0 to 60 m/hr in 3 seconds)  
 Q: What's the mesh? And why do we need one?  
-A:  
+A: The mesh is a decentralized network of computers (or nodes). A mesh is useful because there is no single point of failure. If an individual node goes down, the mesh network will still work. Also, because there is no central node that needs to exist for the network to function, the ownership of the network is shared between all the nodes.
 
 Q: What are nodes? And how do I get one?  
-A:  
+A:  In the peoplesopen.net mesh network, nodes are wireless routers (like Western Digital N600). Normally, these routers are configured to connect a LAN (your local network) to the WAN (the internet) using your ISPs infrastructure. In a mesh configuration, the routers also talk to each other, creating a third network the MAN (municipal area network). This MAN connects nodes that are physically near each other. 
 
 Q: Ok, but I want to help out more?  
 A: Glad to hear, continue to the roles section below to see how you can get more involved.   
