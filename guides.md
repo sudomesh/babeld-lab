@@ -12,10 +12,10 @@ A: Glad to hear, continue to the roles section below to see how you can get more
 
 # roles  
 Mesh networks don't happen by themselves, they require a ton of effort and a lot of collaboration. If you would like to help out, there are three general roles that anyone (with the right motivation) can fulfill.  
- 1. Community Organizer   
-      Are you a well connected? Would you like to help make our mesh network more well connected? Use your social skills to help get the word out. Talk to neighbors and local businesses about setting up a node in their buildings. Help plan events that raise awarness of the mesh. (events, outreach, press, education)  
+ 1. Community Organizer and Educator  
+      Are you a people person? Would you like to help our network expand and provide access to those who need it most? Use your social skills to help get the word out. Talk to neighbors and local businesses about setting up a node in their buildings. Help plan events that raise awarness of the mesh. (events, outreach, press, education)  
  2. Technical Support   
-      Do you like climbing on roofs? Are you a highly skilled troubleshooter. Help provided day to day management and maintence of the mesh. Assist in the deployment of nodes and roof mounted antennas. (node deployment, troubleshooting, rooftop mounting)  
+      Do you like climbing on roofs? Are you a skilled troubleshooter? Help provided day-to-day management and maintence of the mesh. Assist in the deployment of nodes and roof mounted antennas! (node deployment, troubleshooting, rooftop mounting)  
  3. Software Engineering   
       Are you a hacker or programmer? Do you know how to use github? Fork our repos, modify some code (or just edit a README), maybe we'll make you a contributor. If you'd like fulfill this role, continue to the Educational Guides to learn the technical side of mesh networks and how you can contribute to our many dev projects. (firmware development, monitoring tools)  
  
