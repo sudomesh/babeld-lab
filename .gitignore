@@ -1,2 +1,3 @@
 babel*.log
 babel*.pid
+.vagrant
