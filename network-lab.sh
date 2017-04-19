@@ -37,8 +37,8 @@ for ((i=0; i<$length; i++)); do
   ip netns exec "ns-$B" ip link set dev "veth-$B-$A" up
 
   # add some connection quality issues
-  AtoB=$(jq '.edges[0]["->"]' < $1)
-  BtoA=$(jq '.edges[0]["<-"]' < $1)
+  AtoB=$(jq '.edges['$i']["->"]' < $1)
+  BtoA=$(jq '.edges['$i']["<-"]' < $1)
 
   ip netns exec "ns-$A" tc qdisc add dev "veth-$A-$B" root netem ${AtoB:1:-1}
   ip netns exec "ns-$B" tc qdisc add dev "veth-$B-$A" root netem ${BtoA:1:-1}
