@@ -8,7 +8,7 @@ echo "adding nodes"
 for node in $(jq '.nodes | keys[]' < "$1")
 do
   # set up alias for later use
-  alias "ns-${node:1:-1}"="ip netns exec netlab-${node:1:-1}"
+  alias "n${node:1:-1}"="ip netns exec netlab-${node:1:-1}"  
   ip netns add "netlab-${node:1:-1}"
 done
 
@@ -52,14 +52,17 @@ done
 echo "running startup scripts"
 for node in $(jq '.nodes | keys[]' < "$1")
 do
-  scriptArr=$(jq '.nodes['$node'].startup' < $1)
 
+  # don't error on empty script array
+  scriptArr=$(jq '.nodes['$node'].startup' < $1)
   if [ "$scriptArr" = null ]; then
     true
   else
+
+    # iterate through script array
     scripts=$(jq '.nodes['$node'].startup | values[]' < "$1")
     while read -r script; do
-      echo ${script:1:-1}
+      echo "n${node:1:-1} \$" ${script:1:-1}
       ip netns exec "netlab-${node:1:-1}" ${script:1:-1}
     done <<< "$scripts"
   fi

@@ -3,17 +3,20 @@
     "1": {
         "ip": "1.0.0.1",
         "startup": ["ip route add 1.0.0.2 dev veth-1-2",
-                    "ip route add 1.0.0.3 via 1.0.0.2"]
+                    "ip route add 1.0.0.3 via 1.0.0.2",
+                    "sysctl -w net.ipv4.ip_forward=1"]
     },
     "2": {
         "ip": "1.0.0.2",
         "startup": ["ip route add 1.0.0.1 dev veth-2-1",
-                    "ip route add 1.0.0.3 dev veth-2-3"]
+                    "ip route add 1.0.0.3 dev veth-2-3",
+                    "sysctl -w net.ipv4.ip_forward=1"]
     },
     "3": {
         "ip": "1.0.0.3",
         "startup": ["ip route add 1.0.0.2 dev veth-3-2",
-                    "ip route add 1.0.0.1 via 1.0.0.2"]
+                    "ip route add 1.0.0.1 via 1.0.0.2",
+                    "sysctl -w net.ipv4.ip_forward=1"]
     }
   },
   "edges": [
