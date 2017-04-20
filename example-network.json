@@ -1,0 +1,31 @@
+{
+  "nodes": {
+    "1": {
+        "ip": "1.0.0.1",
+        "startup": ["ip route add 1.0.0.2 dev veth-1-2",
+                    "ip route add 1.0.0.3 via 1.0.0.2"]
+    },
+    "2": {
+        "ip": "1.0.0.2",
+        "startup": ["ip route add 1.0.0.1 dev veth-2-1",
+                    "ip route add 1.0.0.3 dev veth-2-3"]
+    },
+    "3": {
+        "ip": "1.0.0.3",
+        "startup": ["ip route add 1.0.0.2 dev veth-3-2",
+                    "ip route add 1.0.0.1 via 1.0.0.2"]
+    }
+  },
+  "edges": [
+    {
+      "nodes": ["1", "2"],
+      "->": "delay 10ms 20ms distribution normal",
+      "<-": "delay 500ms 20ms distribution normal"
+    },
+    {
+      "nodes": ["2", "3"],
+      "->": "delay 10ms 20ms distribution normal",
+      "<-": "delay 500ms 20ms distribution normal"
+    }
+  ]
+}
