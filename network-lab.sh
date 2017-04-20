@@ -55,6 +55,6 @@ do
   if [ "$script" = null ]; then
     true
   else
-    ip netns exec "ns-${node:1:-1}" ${script:1:-1}
+    ip netns exec "netlab-${node:1:-1}" ${script:1:-1}
   fi
 done
