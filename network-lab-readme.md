@@ -1,8 +1,8 @@
 # Network lab
-This script creates a set of network namespaces, linked by virtual eth connections. It is entirely driven by a JSON network graph configuration format. Additionally, it uses the tc netem traffic shaper to simulate various kinds of faulty connections, packet loss, and latency on the links. This tool was created to experiment with and test routing protocols, but it could have many other uses.
+This script creates a set of network namespaces, linked by virtual eth connections. It is entirely driven by a JSON network graph configuration format. Additionally, it uses the [tc netem](http://man7.org/linux/man-pages/man8/tc-netem.8.html) traffic shaper to simulate various kinds of faulty connections, packet loss, and latency on the links. This tool was created to experiment with and test routing protocols, but it could have many other uses.
 
 ## Dependencies
-Your system must have network namespace support. For example, Ubuntu 16.04 will work. Also, `jq` must be installed.
+Your system must have network namespace support. For example, Ubuntu 16.04 will work. Also, [jq](https://stedolan.github.io/jq/) must be installed.
 
 ## Usage
 Most operations on network namespaces require `sudo`, and the network-lab sets some handy aliases for working with network namespaces. So the preferred way to start it currently is like this:
@@ -18,7 +18,6 @@ To do operations inside the namespaces, you can now use the aliases defined by t
 n<node name> <your command>
 ```
 for example
-
 ```bash
 $ n1 ip route
 1.0.0.2 dev veth-1-2  scope link 
