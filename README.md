@@ -8,8 +8,8 @@ The purpose of this project is to set up a virtual babel mesh for educational an
 # requirements
 1. a linux of sorts
 1. [make](https://www.gnu.org/software/make/)
-1. [git](https://git-scm.com) (using ```sudo apt-get install git``` perhaps)
-1. [babeld](https://github.com/jech/babeld)
+1. [git](https://git-scm.com) (e.g., ```sudo apt-get install git```)
+1. [babeld](https://github.com/jech/babeld) (e.g., ```sudo apt-get install babeld```)
 1. [wireshark](https://wireshark.org) or at least [tshark](https://www.wireshark.org/docs/man-pages/tshark.html)
 1. [ip](http://man7.org/linux/man-pages/man8/ip.8.html) 
 1. [bridge-utils](http://www.linuxfromscratch.org/blfs/view/svn/basicnet/bridge-utils.html) or at least [brctl](https://linux.die.net/man/8/brctl)
