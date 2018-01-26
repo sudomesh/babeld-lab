@@ -29,9 +29,13 @@ Even if you do not have a physical connection to the mesh, you can still be part
 # Use Case - Raspberry Pi as wired mesh node via home node.
 
 ## ingredients
+
 1 home node
+
 1 raspberry pi running raspian with ssh enabled (see https://www.raspberrypi.org/documentation/remote-access/ssh/)
+
 1 computer connected to home node via peoplesopen.net ssid
+
 1 human that is somewhat familiar with linux on commandline .
 
 the use case assumed your computer is running ubuntu compatible flavor.
@@ -49,6 +53,8 @@ default via 100.65.xx.xx dev wlp3s0  proto static  metric 600
 The first number 100.65.xx.xx is the ip address of your router on the mesh. 
 
 2. connect the raspberry pi to the private port of the router (on MyNet N600, this is the third port from the power button)
+
+![cow-private](./cow-private.png)
 
 3. login to the router using ```ssh root@[ip home node]``` and provide password specified when flashing/ configuring the home node. This should look something like:
 
@@ -104,7 +110,7 @@ where ip_address is the static mesh ip, routers is the mesh ip of your home node
 
 8. shutdown your pi by running ```sudo shutdown now``` and unplug from the home node private port.
 
-9. plug pi into the second mesh port (see picture, confirmed to work with MyNet N600 that meshes with another home node to get route to internet), disconnect the power supply and power back on. Note that for some reason, this approach doesn't work with the second mesh node, if this is the case, use the public port, the port next to the yellow colored ethernet port (confirmed to work with MyNet N750 bridge to WAN via hotspot)
+9. plug pi into the second mesh port (confirmed to work with MyNet N600 that meshes with another home node to get route to internet ![mesh port](./chicken.png)), disconnect the power supply and power back on. Note that for some reason, this approach doesn't work with the second mesh node, if this is the case, use the public port, the port next to the yellow colored ethernet port (confirmed to work with MyNet N750 bridge to WAN via hotspot, ![public-port](./cow-public.png))
 
 10. ssh into pi by running ```ssh pi@[pi mesh ip address]``` on your laptop or router.
 
