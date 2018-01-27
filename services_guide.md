@@ -115,3 +115,109 @@ where ip_address is the static mesh ip, routers is the mesh ip of your home node
 10. ssh into pi by running ```ssh pi@[pi mesh ip address]``` on your laptop or router.
 
 11. if all works well, the mesh is yours to serve to from your pi. 
+
+# Use Case - Scuttlebot on RaspberryPi 
+
+## ingredients
+
+2 meshing raspberrypi created via previous use case
+
+1 internet access
+
+## steps
+
+0. ssh into raspberry pi
+
+1. install nvm ```curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.8/install.sh | bash``` for more up-to-date see nvm install instructions
+
+2. activate nvm on login by creating a .bash_profile with ```touch ~/.bash_profile``` and adding ```source ~/.bashrc``` in it.
+
+3. exit / relogin using ssh
+
+4. type nvm , which should show:
+
+```
+$ nvm
+
+Node Version Manager
+...
+```
+
+5. install node /npm using nvm 
+
+6. set default node alias to latest node version
+
+7. install scuttlebot using up-to-date install instructions, making sure to install linux dependencies
+
+8. start sbot by ```sbot server --logging.level=info```, you should see something like:
+```
+$ sbot server --logging.level=info
+scuttlebot 10.5.0 /home/pi/.ssb logging.level:info
+my key ID: Y04ZhLf/fYtyk2RejQpVQkQSBzaRspIGjzLnFFkZPZI=.ed25519
+```
+
+9. repeat process for second raspberry pi
+
+10. publish a message using something like ```sbot publish --type post --text "why did I cross the road?"``` (repeat for other sbot server)
+
+11. stop sbot 
+
+12. edit ```~/.ssb/gossip.json``` and manually add:
+
+```json
+[ { "host" : "[mesh ip address of peer pi]", "port": 8008, "key": "@[key id of peer shown on startup]"} ]
+```
+
+13. start sbots, and notices messages like: 
+
+```
+info @Y04 SBOT 1 peers loaded from /home/pi/.ssb/gossip.json 
+info @Y04 SBOT 100.65.20.66:8008:@89LpMgCkzPxAiCaxR0XqcUD2uhbFZCD5rnYvX86vNJM=.ed25519 PEER JOINED
+```
+
+14. now follow each other using ```sbot publish --type contact --contact "@89LpMgCkzPxAiCaxR0XqcUD2uhbFZCD5rnYvX86vNJM=.ed25519" --following```
+
+15. manually start a replication by ```sbot replicate.upto```
+
+16. check the logs to see whether peer messages are showing up using ```sbot log```
+
+
+example message 1
+```
+{
+  "key": "%MZKRrGH9gn3v3NSEo27ABDpDxnSQLuDqp2dgiFBHcY0=.sha256",
+  "value": {
+    "previous": "%OFOrIsC/fC5GA8GstLLaYIh7oCB+TH3rA4hG1Y5qJF0=.sha256",
+    "sequence": 4,
+    "author": "@89LpMgCkzPxAiCaxR0XqcUD2uhbFZCD5rnYvX86vNJM=.ed25519",
+    "timestamp": 1517016198197,
+    "hash": "sha256",
+    "content": {
+      "type": "post",
+      "text": "The chicken crossed the road, because it wanted some cream."
+    },
+    "signature": "flck2NZ3f9FV7Sn++Bex5BcXWOSdnGcylGZ4wSFgNjWyTqjrCQK1L3UMOQp9BcarSVNF4txR3tumSHaezfEzAA==.sig.ed25519"
+  },
+  "timestamp": 1517016198422
+}
+```
+
+example message 2
+```
+{
+  "key": "%QJZjdBl4nxppB9mJJlxxh2yM8wvPKrPWkI56hcKf+oo=.sha256",
+  "value": {
+    "previous": null,
+    "sequence": 1,
+    "author": "@Y04ZhLf/fYtyk2RejQpVQkQSBzaRspIGjzLnFFkZPZI=.ed25519",
+    "timestamp": 1517014903948,
+    "hash": "sha256",
+    "content": {
+      "type": "post",
+      "text": "why did I cross the road?"
+    },
+    "signature": "DxmD+wSEQDRl1dDn8QvFA8z6RcKhsg/3deB5RLVlUhiept/JJ9aKS0mQe1Usp4237eMsePpN/bdP5xMm2vLxCw==.sig.ed25519"
+  },
+  "timestamp": 1517014903998
+}
+```
