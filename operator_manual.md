@@ -29,7 +29,7 @@ steps -
 
 ## no internet connection
 
-1. Configure your ethernet port to a local address (e.g., 172.30.0.9) after removing existing ip addresses (see [#tips-and-tricks])
+1. Configure your ethernet port to a local address (e.g., 172.30.0.9) after removing existing ip addresses (see [Tips and Tricks](#tips-and-tricks).
 1. Login to home node using ethernet port 3 of home node and ```ssh root@172.30.0.1```. 
 
 ```bash
